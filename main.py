@@ -5,6 +5,7 @@ from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.ui import WebDriverWait
 from bs4 import BeautifulSoup
 import os.path
+import time
 
 LINK = 'https://assets.weforum.org/static/reports/gender-gap-report-2021/v9/index.html'
 TABLE_HEADER = 'country;' \
@@ -54,4 +55,6 @@ def main():
 
 
 if __name__ == '__main__':
+    start = time.time()
     main()
+    print("--- %s seconds ---" % (time.time() - start))
